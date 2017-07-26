@@ -15,12 +15,19 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.graphics.Color;
 
 public class SecondActivity extends AppCompatActivity  implements View.OnClickListener {
 
     Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button10,
             button11, button12, button13, button14, button15, button16, button17, button18, button19, button20,
             button21, button22, button23, button24, buttonRegenerate;
+    String num1, num2, num3, num4, num5, num6, num7, num8, num9, num10, num11, num12, num13, num14, num15, num16, num17,
+    num18, num19, num20, num21, num22, num23, num24;
+
+    int[] number = new int[24]; //移動
+
+    boolean switch1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +99,7 @@ public class SecondActivity extends AppCompatActivity  implements View.OnClickLi
         Math.random();
 
         //24個の重複なしの番号を生成
-        int[] number = new int[24];
+
         for (int i = 0; i < number.length; i++) {
             Loop:
             while (true) {
@@ -106,53 +113,53 @@ public class SecondActivity extends AppCompatActivity  implements View.OnClickLi
             }
         }
 
-        String num1 = String.valueOf(number[0]);
+        num1 = String.valueOf(number[0]);
         button1.setText(num1);
-        String num2 = String.valueOf(number[1]);
+        num2 = String.valueOf(number[1]);
         button2.setText(num2);
-        String num3 = String.valueOf(number[2]);
+        num3 = String.valueOf(number[2]);
         button3.setText(num3);
-        String num4 = String.valueOf(number[3]);
+        num4 = String.valueOf(number[3]);
         button4.setText(num4);
-        String num5 = String.valueOf(number[4]);
+        num5 = String.valueOf(number[4]);
         button5.setText(num5);
-        String num6 = String.valueOf(number[5]);
+        num6 = String.valueOf(number[5]);
         button6.setText(num6);
-        String num7 = String.valueOf(number[6]);
+        num7 = String.valueOf(number[6]);
         button7.setText(num7);
-        String num8 = String.valueOf(number[7]);
+        num8 = String.valueOf(number[7]);
         button8.setText(num8);
-        String num9 = String.valueOf(number[8]);
+        num9 = String.valueOf(number[8]);
         button9.setText(num9);
-        String num10 = String.valueOf(number[9]);
+        num10 = String.valueOf(number[9]);
         button10.setText(num10);
-        String num11 = String.valueOf(number[10]);
+        num11 = String.valueOf(number[10]);
         button11.setText(num11);
-        String num12 = String.valueOf(number[11]);
+        num12 = String.valueOf(number[11]);
         button12.setText(num12);
-        String num13 = String.valueOf(number[12]);
+        num13 = String.valueOf(number[12]);
         button13.setText(num13);
-        String num14 = String.valueOf(number[13]);
+        num14 = String.valueOf(number[13]);
         button14.setText(num14);
-        String num15 = String.valueOf(number[14]);
+        num15 = String.valueOf(number[14]);
         button15.setText(num15);
-        String num16 = String.valueOf(number[15]);
+        num16 = String.valueOf(number[15]);
         button16.setText(num16);
-        String num17 = String.valueOf(number[16]);
+        num17 = String.valueOf(number[16]);
         button17.setText(num17);
-        String num18 = String.valueOf(number[17]);
+        num18 = String.valueOf(number[17]);
         button18.setText(num18);
-        String num19 = String.valueOf(number[18]);
+        num19 = String.valueOf(number[18]);
         button19.setText(num19);
-        String num20 = String.valueOf(number[19]);
+        num20 = String.valueOf(number[19]);
         button20.setText(num20);
-        String num21 = String.valueOf(number[20]);
+        num21 = String.valueOf(number[20]);
         button21.setText(num21);
-        String num22 = String.valueOf(number[21]);
+        num22 = String.valueOf(number[21]);
         button22.setText(num22);
-        String num23 = String.valueOf(number[22]);
+        num23 = String.valueOf(number[22]);
         button23.setText(num23);
-        String num24 = String.valueOf(number[23]);
+        num24 = String.valueOf(number[23]);
         button24.setText(num24);
 
 
@@ -185,76 +192,83 @@ public class SecondActivity extends AppCompatActivity  implements View.OnClickLi
 
     public void onClick(View v) {
         if (v.getId() == R.id.button1) {
-            button1.setBackgroundColor(0x19197000);
-            button1.setTextColor(0xFFFFFFFF);
+            if (!switch1) {
+                button1.setBackgroundColor(Color.rgb(25, 25, 112));
+                button1.setTextColor(0xFFFFFFFF);
+                switch1 = true;
+            } else {
+                button1.setBackgroundColor(Color.rgb(255, 255, 255));
+                button1.setTextColor(Color.rgb(0, 0, 0));
+                switch1 = false;
+            }
         } else if (v.getId() == R.id.button2) {
-            button2.setBackgroundColor(0x19197000);
+            button2.setBackgroundColor(Color.rgb(25, 25, 112));
             button2.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button3) {
-            button3.setBackgroundColor(0x19197000);
+            button3.setBackgroundColor(Color.rgb(25, 25, 112));
             button3.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button4) {
-            button4.setBackgroundColor(0x19197000);
+            button4.setBackgroundColor(Color.rgb(25, 25, 112));
             button4.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button5) {
-            button5.setBackgroundColor(0x19197000);
+            button5.setBackgroundColor(Color.rgb(25, 25, 112));
             button5.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button6) {
-            button6.setBackgroundColor(0x19197000);
+            button6.setBackgroundColor(Color.rgb(25, 25, 112));
             button6.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button7) {
-            button7.setBackgroundColor(0x19197000);
+            button7.setBackgroundColor(Color.rgb(25, 25, 112));
             button7.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button8) {
-            button8.setBackgroundColor(0x19197000);
+            button8.setBackgroundColor(Color.rgb(25, 25, 112));
             button8.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button9) {
-            button9.setBackgroundColor(0x19197000);
+            button9.setBackgroundColor(Color.rgb(25, 25, 112));
             button9.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button10) {
-            button10.setBackgroundColor(0x19197000);
+            button10.setBackgroundColor(Color.rgb(25, 25, 112));
             button10.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button11) {
-            button11.setBackgroundColor(0x19197000);
+            button11.setBackgroundColor(Color.rgb(25, 25, 112));
             button11.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button12) {
-            button12.setBackgroundColor(0x19197000);
+            button12.setBackgroundColor(Color.rgb(25, 25, 112));
             button12.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button13) {
-            button13.setBackgroundColor(0x19197000);
+            button13.setBackgroundColor(Color.rgb(25, 25, 112));
             button13.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button14) {
-            button14.setBackgroundColor(0x19197000);
+            button14.setBackgroundColor(Color.rgb(25, 25, 112));
             button14.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button15) {
-            button15.setBackgroundColor(0x19197000);
+            button15.setBackgroundColor(Color.rgb(25, 25, 112));
             button15.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button16) {
-            button16.setBackgroundColor(0x19197000);
+            button16.setBackgroundColor(Color.rgb(25, 25, 112));
             button16.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button17) {
-            button17.setBackgroundColor(0x19197000);
+            button17.setBackgroundColor(Color.rgb(25, 25, 112));
             button17.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button18) {
-            button18.setBackgroundColor(0x19197000);
+            button18.setBackgroundColor(Color.rgb(25, 25, 112));
             button18.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button19) {
-            button19.setBackgroundColor(0x19197000);
+            button19.setBackgroundColor(Color.rgb(25, 25, 112));
             button19.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button20) {
-            button20.setBackgroundColor(0x19197000);
+            button20.setBackgroundColor(Color.rgb(25, 25, 112));
             button20.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button21) {
-            button21.setBackgroundColor(0x19197000);
+            button21.setBackgroundColor(Color.rgb(25, 25, 112));
             button21.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button22) {
-            button22.setBackgroundColor(0x19197000);
+            button22.setBackgroundColor(Color.rgb(25, 25, 112));
             button22.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button23) {
-            button23.setBackgroundColor(0x19197000);
+            button23.setBackgroundColor(Color.rgb(25, 25, 112));
             button23.setTextColor(0xFFFFFFFF);
         } else if (v.getId() == R.id.button24) {
-            button24.setBackgroundColor(0x19197000);
+            button24.setBackgroundColor(Color.rgb(25, 25, 112));
             button24.setTextColor(0xFFFFFFFF);
         } else {
             numbersGenerator();
